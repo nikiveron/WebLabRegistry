@@ -6,8 +6,11 @@
     <File Path="README.md" />
     <File Path="Тестовое.md" />
   </Folder>
+  <Project Path="labregistry.client/labregistry.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
   <Project Path="src/LabRegistry.Application/LabRegistry.Application.csproj" Id="360de723-ddbd-49d1-948a-e2666ff28c6c" />
-  <Project Path="src/LabRegistry.Client/LabRegistry.Client.csproj" Id="bcc527f5-ee0d-456a-a34e-4497ee7606f0" />
   <Project Path="src/LabRegistry.Domain/LabRegistry.Domain.csproj" Id="a43032cc-0c2d-49cd-84ab-7c10fa2ac64c" />
   <Project Path="src/LabRegistry.Infrastructure/LabRegistry.Infrastructure.csproj" Id="04067341-adab-4231-be50-c7669298997b" />
   <Project Path="src/LabRegistry.Server/LabRegistry.Server.csproj" Id="c0729df8-ec1a-4730-92f4-d0202db26c73" />

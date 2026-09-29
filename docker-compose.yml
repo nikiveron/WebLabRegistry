@@ -21,6 +21,19 @@ services:
       timeout: 10s
       retries: 3
 
+  frontend:
+    build:
+      context: ./labregistry.client
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_started
+    networks:
+      - labregistry-network
+
   postgres:
     image: postgres:18
     container_name: postgres
