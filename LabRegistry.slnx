@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/Элементы решения/">
     <File Path=".env" />
+    <File Path=".gitignore" />
     <File Path="CheatSheet.md" />
     <File Path="docker-compose.yml" />
     <File Path="README.md" />
