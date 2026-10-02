@@ -22,8 +22,8 @@ spec:
         env:
         - name: POSTGRES_USER
           valueFrom:
-            secretKeyRef:
-              name: postgres-secret
+            configMapKeyRef:
+              name: postgres-config
               key: POSTGRES_USER
 
         - name: POSTGRES_PASSWORD
@@ -34,8 +34,8 @@ spec:
 
         - name: POSTGRES_DB
           valueFrom:
-            secretKeyRef:
-              name: postgres-secret
+            configMapKeyRef:
+              name: postgres-config
               key: POSTGRES_DB
 
         volumeMounts:

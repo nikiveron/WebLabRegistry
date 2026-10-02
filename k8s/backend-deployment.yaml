@@ -41,3 +41,19 @@ spec:
               secretKeyRef:
                 name: backend-secret
                 key: ConnectionStrings__Postgres
+                env:
+          - name: Logging__LogLevel__Default
+            valueFrom:
+              configMapKeyRef:
+                name: backend-config
+                key: Logging__LogLevel__Default
+          - name: Logging__LogLevel__Microsoft.AspNetCore
+            valueFrom:
+              configMapKeyRef:
+                name: backend-config
+                key: Logging__LogLevel__Microsoft.AspNetCore
+          - name: Logging__LogLevel__Microsoft.EntityFrameworkCore
+            valueFrom:
+              configMapKeyRef:
+                name: backend-config
+                key: Logging__LogLevel__Microsoft.EntityFrameworkCore

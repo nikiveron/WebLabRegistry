@@ -11,6 +11,7 @@
     <File Path="k8s/postgres-pvc.yaml" />
     <File Path="k8s/postgresql-deployment.yaml" />
     <File Path="k8s/postgresql-service.yaml" />
+    <File Path="k8s/secrets.yaml" />
     <File Path="README.md" />
     <File Path="Отчет.md" />
     <File Path="Тестовое.md" />

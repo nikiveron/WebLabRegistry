@@ -25,6 +25,6 @@ spec:
         env:
         - name: BACKEND_HOST
           valueFrom:
-            secretKeyRef:
-              name: frontend-secret
+            configMapKeyRef:
+              name: frontend-config
               key: BACKEND_HOST
