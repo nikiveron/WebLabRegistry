@@ -4,7 +4,15 @@
     <File Path=".gitignore" />
     <File Path="CheatSheet.md" />
     <File Path="docker-compose.yml" />
+    <File Path="k8s/backend-deployment.yaml" />
+    <File Path="k8s/backend-service.yaml" />
+    <File Path="k8s/client-deployment.yaml" />
+    <File Path="k8s/client-service.yaml" />
+    <File Path="k8s/postgres-pvc.yaml" />
+    <File Path="k8s/postgresql-deployment.yaml" />
+    <File Path="k8s/postgresql-service.yaml" />
     <File Path="README.md" />
+    <File Path="Отчет.md" />
     <File Path="Тестовое.md" />
   </Folder>
   <Project Path="labregistry.client/labregistry.client.esproj">

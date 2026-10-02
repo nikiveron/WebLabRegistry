@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      initContainers:
+              - name: wait-for-postgres
+                image: postgres:18
+                command:
+                  - sh
+                  - -c
+                  - |
+                    until pg_isready -h postgres-service -p 5432 -U postgres -d labregistry_db;
+                    do
+                      echo "Waiting for PostgreSQL...";
+                      sleep 2;
+                    done;
+                    echo "PostgreSQL is ready!";
+      containers:
+      - image: weblabregistry-server:1.0
+        name: backend
+        ports:
+        - containerPort: 8080
+        env:
+          - name: ConnectionStrings__Postgres
+            valueFrom:
+              secretKeyRef:
+                name: backend-secret
+                key: ConnectionStrings__Postgres

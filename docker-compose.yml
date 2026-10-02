@@ -10,6 +10,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
     depends_on:
       postgres:
         condition: service_started
@@ -28,6 +29,8 @@ services:
     container_name: frontend
     ports:
       - "3000:80"
+    environment:
+        BACKEND_HOST: ${BACKEND_HOST}
     depends_on:
       backend:
         condition: service_started
